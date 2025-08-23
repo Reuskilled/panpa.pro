@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  background-color: #36393f;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto';
+}
+
+.bg-discord-blurple { background-color: #5865F2; }
+.bg-gray-800 { background-color: #2F3136; }
+.bg-gray-700 { background-color: #36393F; }
+.text-white { color: white; }
+.p-4 { padding: 1rem; }
+.rounded { border-radius: 0.25rem; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.min-h-screen { min-height: 100vh; }

@@ -1,0 +1,608 @@
+{
+  "users": [
+    {
+      "username": "Pisago",
+      "email": "Pisago@gmail.com",
+      "password_hash": "$2a$10$yOdsadiIp/1KLHXDzn0ieOIjjaVkb9/0B8dTXcFiX3ctu8eKUQTmq",
+      "id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "created_at": "2025-08-19T20:51:25.730Z"
+    },
+    {
+      "username": "babapro",
+      "email": "babapro@gmail.com",
+      "password_hash": "$2a$10$QQDtgQuwlRBCPUQjSW.uF.Tsbvj5Uh6WIBJPG3mbWAvJGRNu0bZtS",
+      "id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "created_at": "2025-08-20T18:45:05.858Z"
+    },
+    {
+      "username": "anne",
+      "email": "anne@gmail.com",
+      "password_hash": "$2a$10$trmJ1NoMDrcziK3PfzE9.uWXEEaDCMmGsRWKaZ/Wx34SZIBSxH.8q",
+      "id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "created_at": "2025-08-22T19:56:40.523Z"
+    }
+  ],
+  "servers": [
+    {
+      "name": "11321312",
+      "description": "123123",
+      "owner_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "id": "9f05b273-9899-440a-87dc-e5559f96be7e",
+      "created_at": "2025-08-19T20:51:50.065Z"
+    },
+    {
+      "name": "123",
+      "description": "1231",
+      "owner_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "id": "fc90a2ea-7658-46c6-818f-84a20dcd3930",
+      "created_at": "2025-08-19T21:00:08.386Z"
+    },
+    {
+      "name": "qwe",
+      "owner_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "id": "94241815-7a65-4170-8029-f089599d2986",
+      "created_at": "2025-08-20T19:33:19.178Z"
+    },
+    {
+      "name": "24",
+      "owner_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "id": "c66ea6c5-2e81-4b30-9ca0-5be71d6fa724",
+      "created_at": "2025-08-20T19:48:53.941Z"
+    }
+  ],
+  "channels": [
+    {
+      "id": "7d39704c-dcaf-4c53-bcde-ae8b4e6b7469",
+      "server_id": "9f05b273-9899-440a-87dc-e5559f96be7e",
+      "name": "general",
+      "type": "text",
+      "position": 0,
+      "created_at": "2025-08-19T20:51:50.065Z"
+    },
+    {
+      "id": "50cd7ffe-8832-416e-a48a-f31f23596369",
+      "server_id": "fc90a2ea-7658-46c6-818f-84a20dcd3930",
+      "name": "general",
+      "type": "text",
+      "position": 0,
+      "created_at": "2025-08-19T21:00:08.387Z"
+    },
+    {
+      "id": "527db48b-fe8a-4428-9b93-59f414672183",
+      "server_id": "94241815-7a65-4170-8029-f089599d2986",
+      "name": "general",
+      "type": "text",
+      "position": 0,
+      "created_at": "2025-08-20T19:33:19.178Z"
+    },
+    {
+      "id": "7cbf8bee-54b7-4ae1-b3ab-648ea68aa8fc",
+      "server_id": "c66ea6c5-2e81-4b30-9ca0-5be71d6fa724",
+      "name": "general",
+      "type": "text",
+      "position": 0,
+      "created_at": "2025-08-20T19:48:53.941Z"
+    }
+  ],
+  "messages": [],
+  "server_members": [
+    {
+      "id": "170934c2-7c65-487c-833d-1b4179d52130",
+      "server_id": "9f05b273-9899-440a-87dc-e5559f96be7e",
+      "user_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "joined_at": "2025-08-19T20:51:50.065Z"
+    },
+    {
+      "id": "24b75959-72ae-4a49-a0b4-2b9c547ce116",
+      "server_id": "fc90a2ea-7658-46c6-818f-84a20dcd3930",
+      "user_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "joined_at": "2025-08-19T21:00:08.387Z"
+    },
+    {
+      "id": "b5da8bc0-c318-4505-8ecc-684330176381",
+      "server_id": "94241815-7a65-4170-8029-f089599d2986",
+      "user_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "joined_at": "2025-08-20T19:33:19.178Z"
+    },
+    {
+      "id": "c614b1fd-cad6-464a-a659-74ad21c4c0f2",
+      "server_id": "c66ea6c5-2e81-4b30-9ca0-5be71d6fa724",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "joined_at": "2025-08-20T19:48:53.941Z"
+    },
+    {
+      "id": "a1fe065d-c1bf-4e18-81af-e3301d165d8f",
+      "server_id": "94241815-7a65-4170-8029-f089599d2986",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "joined_at": "2025-08-21T23:11:44.613Z"
+    },
+    {
+      "id": "c0097a6f-7ec7-4311-bed8-8eb5453f56b8",
+      "server_id": "fc90a2ea-7658-46c6-818f-84a20dcd3930",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "joined_at": "2025-08-21T23:24:32.612Z"
+    },
+    {
+      "id": "4658d5fb-9961-4292-973b-f01c06d4808b",
+      "server_id": "9f05b273-9899-440a-87dc-e5559f96be7e",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "joined_at": "2025-08-21T23:32:45.588Z"
+    }
+  ],
+  "friends": [
+    {
+      "id": "ca2126b3-64d1-4e30-ad8a-bbbac53163e5",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "friend_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "created_at": "2025-08-21T23:48:25.764Z"
+    },
+    {
+      "id": "e2fd747f-b04f-4e00-aad8-0728f224e483",
+      "user_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "friend_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "created_at": "2025-08-21T23:48:25.764Z"
+    },
+    {
+      "id": "9f7b6904-e6cc-4d70-9251-a98185f0f43c",
+      "user_id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "friend_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "created_at": "2025-08-22T19:56:52.917Z"
+    },
+    {
+      "id": "18b5d435-519c-472c-b14a-f01d301e6db6",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "friend_id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "created_at": "2025-08-22T19:56:52.917Z"
+    }
+  ],
+  "friend_requests": [
+    {
+      "id": "5c70185c-81b1-4520-8938-2dbfdb165de4",
+      "requester_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "status": "accepted",
+      "created_at": "2025-08-20T18:45:14.853Z"
+    },
+    {
+      "id": "8c1c50a0-29cd-4731-8f97-b5f86b80956d",
+      "requester_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "status": "accepted",
+      "created_at": "2025-08-20T19:25:11.715Z"
+    },
+    {
+      "id": "5923a03e-6aa4-4cec-bab8-48e5a75800c4",
+      "requester_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "status": "accepted",
+      "created_at": "2025-08-20T20:55:08.484Z"
+    },
+    {
+      "id": "a07d5c5e-d7d5-4f69-ab58-78683d40554f",
+      "requester_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "status": "accepted",
+      "created_at": "2025-08-20T23:39:28.165Z"
+    },
+    {
+      "id": "2d5836e9-3c9b-46b3-9f2e-8646de688d28",
+      "requester_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "status": "accepted",
+      "created_at": "2025-08-21T23:48:17.740Z"
+    },
+    {
+      "id": "c8ca7780-d1a6-47f7-9537-334149822f4f",
+      "requester_id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "status": "accepted",
+      "created_at": "2025-08-22T19:56:49.396Z"
+    }
+  ],
+  "direct_messages": [
+    {
+      "id": "f773fc94-6ff2-43c1-89d6-88566bf1aed9",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-22T20:03:37.114Z"
+    },
+    {
+      "id": "9bb26eab-2709-48ef-9a7a-bd7a36340974",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-22T20:18:07.354Z"
+    },
+    {
+      "id": "8b1dd661-d201-4d34-9ce4-9124c1df4395",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "content": "123",
+      "created_at": "2025-08-22T20:18:11.951Z"
+    },
+    {
+      "id": "b8e00cd2-4613-45a2-865f-1afb26b15281",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "content": "asdf",
+      "created_at": "2025-08-22T20:18:14.789Z"
+    },
+    {
+      "id": "252446e0-ca43-477d-8a59-c4ac9500bad2",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-22T20:19:35.312Z"
+    },
+    {
+      "id": "4e3a24f8-150e-45f7-bd32-17778fb1fd85",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "content": "123",
+      "created_at": "2025-08-22T20:19:38.126Z"
+    },
+    {
+      "id": "c3fa5801-9c77-4082-b40c-33adf4e94093",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-22T20:27:45.256Z"
+    },
+    {
+      "id": "5ba64764-f325-457f-adcf-9c3175c7acb0",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-22T20:27:47.300Z"
+    },
+    {
+      "id": "30241eb0-5e92-4d4d-9176-b529633b3b62",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123+13123",
+      "created_at": "2025-08-22T21:19:17.610Z"
+    },
+    {
+      "id": "f04ac2ce-5953-478c-a303-d24c8dc2578c",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-22T21:19:18.758Z"
+    },
+    {
+      "id": "b76b69b7-a564-4877-a8fe-f193bc539b3c",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "content": "213",
+      "created_at": "2025-08-22T21:19:31.736Z"
+    },
+    {
+      "id": "196998c1-bed4-462b-a06d-a76649b39049",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "content": "213",
+      "created_at": "2025-08-22T21:19:33.662Z"
+    },
+    {
+      "id": "2fa6c713-afce-4485-bc95-07c4b3ba9531",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "http://localhost:3000/invite/HYRXLY",
+      "created_at": "2025-08-23T17:56:22.029Z"
+    },
+    {
+      "id": "dbf08a8e-b576-443e-b461-461e9cdd686b",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T18:20:13.184Z",
+      "reply_to_id": "b8e00cd2-4613-45a2-865f-1afb26b15281"
+    },
+    {
+      "id": "1eaad7b4-4b9f-4d1a-88b8-93c830d61ee2",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T18:36:16.582Z"
+    },
+    {
+      "id": "83f30347-f0b6-47bd-8035-651aa38b2f15",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "content": "123",
+      "created_at": "2025-08-23T18:36:44.246Z"
+    },
+    {
+      "id": "14022f1d-d229-46b8-8d49-5c47a9d6d1d5",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "content": "213",
+      "created_at": "2025-08-23T18:36:47.305Z"
+    },
+    {
+      "id": "aab56eb9-aa90-4efc-9864-5207053e19e6",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "content": "213",
+      "created_at": "2025-08-23T18:36:49.436Z"
+    },
+    {
+      "id": "df1fc7f6-78a7-4349-8bb4-cb13ac9cb858",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "23",
+      "created_at": "2025-08-23T18:36:53.464Z"
+    },
+    {
+      "id": "30786ba7-d22b-4fd0-bc7a-10039a11a3a0",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T19:24:46.292Z"
+    },
+    {
+      "id": "a578554d-72a0-4a91-8b73-774c99cb576a",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T19:24:47.306Z"
+    },
+    {
+      "id": "2982fbe5-8487-4dd9-88db-155142147d38",
+      "sender_id": "188f7253-8d7c-4f59-b6ab-4d0caaa432ab",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "213",
+      "created_at": "2025-08-23T19:25:10.435Z"
+    },
+    {
+      "id": "aed68805-2f3d-481a-9366-bfaf277b3a14",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "content": "123",
+      "created_at": "2025-08-23T19:25:22.494Z"
+    },
+    {
+      "id": "237a4f3e-b5e5-45f5-a11f-cc4a2e096d25",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "213",
+      "created_at": "2025-08-23T19:40:49.831Z"
+    },
+    {
+      "id": "7b6fd1aa-91a5-43e7-aa1e-9d6f484812d0",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123213",
+      "created_at": "2025-08-23T19:40:52.038Z"
+    },
+    {
+      "id": "ff6ef926-37f2-4334-8ff3-d442466577d5",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T19:54:23.934Z"
+    },
+    {
+      "id": "bd865d3a-a199-4440-bd57-d6904091a86d",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T19:54:24.905Z"
+    },
+    {
+      "id": "3709492d-6b0c-4a9c-aa77-18dd57355a3f",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "213",
+      "created_at": "2025-08-23T19:54:32.411Z"
+    },
+    {
+      "id": "6b1db47d-d169-4f28-a999-74603df4dace",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "213",
+      "created_at": "2025-08-23T20:05:16.751Z"
+    },
+    {
+      "id": "567ad38f-5b24-4985-99d0-9b85028734e8",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T20:07:08.714Z"
+    },
+    {
+      "id": "41cbae49-74bf-4910-90e3-9a0b014d1b5b",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T20:07:12.768Z"
+    },
+    {
+      "id": "829f5ff3-c501-419c-b671-d1eefbc1b12f",
+      "sender_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "receiver_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "content": "http://localhost:3000/invite/8YT43A",
+      "created_at": "2025-08-23T20:07:25.011Z"
+    },
+    {
+      "id": "4575d443-8a06-441c-9755-91d5e2b8bc27",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:48:34.376Z"
+    },
+    {
+      "id": "5bb298e6-5513-4069-b4b1-7fafaf04cb69",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:48:36.123Z"
+    },
+    {
+      "id": "4c0d42dd-1563-4dab-97f9-6e342d5ae194",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:48:44.332Z"
+    },
+    {
+      "id": "3f3c79f4-4d45-4b59-87a8-a8a4d2374532",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:48:46.356Z"
+    },
+    {
+      "id": "79a41c09-a75b-40d8-b0e9-007a63a225bc",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:52:56.501Z"
+    },
+    {
+      "id": "a639a12f-dfad-4d38-a4a6-fcddf6ad2660",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:53:02.982Z"
+    },
+    {
+      "id": "4feb112d-82a1-4184-8197-2b31f72c54ad",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:53:05.524Z"
+    },
+    {
+      "id": "a98a0807-016a-491b-8484-0963153baded",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:53:20.005Z"
+    },
+    {
+      "id": "35092e8b-f6c3-478f-930f-722f4bd91219",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:53:23.333Z"
+    },
+    {
+      "id": "df757b69-4002-42b9-b13b-52655a31fdb3",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:54:50.135Z"
+    },
+    {
+      "id": "29174899-3a06-4f71-8a33-fee2944b6b0c",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "213",
+      "created_at": "2025-08-23T20:54:53.379Z"
+    },
+    {
+      "id": "00591a70-1029-4f46-baa9-8efb41f5cc83",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:54:57.632Z"
+    },
+    {
+      "id": "93be307a-5528-45c9-9929-9fe999223c38",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:55:55.895Z"
+    },
+    {
+      "id": "80a33739-3157-426e-a71d-144436a1400a",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "12312312",
+      "created_at": "2025-08-23T20:55:58.145Z"
+    },
+    {
+      "id": "6bc84d15-469d-4ee6-847e-84b3f23b74dd",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "Sohbet başlatıldı.",
+      "created_at": "2025-08-23T20:56:01.216Z"
+    },
+    {
+      "id": "1399f6af-e9ac-4be9-ae0c-44cca05b0ccf",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123213",
+      "created_at": "2025-08-23T20:57:14.314Z"
+    },
+    {
+      "id": "d5be88e2-4957-44bc-a12b-c7946478a27d",
+      "sender_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "receiver_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "content": "123",
+      "created_at": "2025-08-23T20:57:36.338Z"
+    }
+  ],
+  "blocked_users": [],
+  "message_reactions": [
+    {
+      "id": "2fbbedb1-d21d-457f-8803-31a8a31c7417",
+      "message_id": "9bb26eab-2709-48ef-9a7a-bd7a36340974",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "emoji": "👍",
+      "created_at": "2025-08-22T20:18:18.175Z"
+    },
+    {
+      "id": "510a0ed6-b051-43ce-a956-476659dfb7bf",
+      "message_id": "b8e00cd2-4613-45a2-865f-1afb26b15281",
+      "user_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "emoji": "👍",
+      "created_at": "2025-08-22T20:18:21.311Z"
+    },
+    {
+      "id": "720975af-48a7-4a3d-bbbb-6897f59200c2",
+      "message_id": "b8e00cd2-4613-45a2-865f-1afb26b15281",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "emoji": "👍",
+      "created_at": "2025-08-22T20:18:27.694Z"
+    },
+    {
+      "id": "3f8f4c8f-4a40-4197-b5a0-50ef42c4b763",
+      "message_id": "b8e00cd2-4613-45a2-865f-1afb26b15281",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "emoji": "❤️",
+      "created_at": "2025-08-22T20:18:28.747Z"
+    },
+    {
+      "id": "c6c96c68-e91e-4870-a252-367f5becbcfa",
+      "message_id": "8b1dd661-d201-4d34-9ce4-9124c1df4395",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "emoji": "👍",
+      "created_at": "2025-08-22T20:18:29.797Z"
+    },
+    {
+      "id": "fe96fd7d-c792-4a83-9a0c-43bddec452b8",
+      "message_id": "b8e00cd2-4613-45a2-865f-1afb26b15281",
+      "user_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "emoji": "❤️",
+      "created_at": "2025-08-22T20:19:26.951Z"
+    },
+    {
+      "id": "486e4515-e89a-4b7b-ad50-38eba93de13a",
+      "message_id": "a578554d-72a0-4a91-8b73-774c99cb576a",
+      "user_id": "432e1bcc-e082-4b35-b856-7c56b5d921b5",
+      "emoji": "👍",
+      "created_at": "2025-08-23T20:07:16.461Z"
+    },
+    {
+      "id": "d73ce722-cc39-45b8-808b-d110d67ef8b2",
+      "message_id": "a578554d-72a0-4a91-8b73-774c99cb576a",
+      "user_id": "b4074566-2c0a-4937-90ec-afa3d33e5060",
+      "emoji": "👍",
+      "created_at": "2025-08-23T20:07:17.689Z"
+    }
+  ],
+  "hidden_conversations": []
+}
