@@ -55,7 +55,23 @@ const DMPanel: React.FC<DMPanelProps> = ({
     }
   };
 
-
+  // Conversation gizleme fonksiyonu - Backend API kullanır
+  const handleHideConversation = async (userId: string, username: string) => {
+    if (window.confirm(`${username} ile olan sohbeti direkt mesajlardan gizlemek istediğinizden emin misiniz? (Mesajlar silinmez, sadece listeden gizlenir)`)) {
+      try {
+        // Backend API'den gizle
+        await dmApi.hideConversation(userId);
+        
+        // Başarılıysa frontend'ten de çıkar
+        setConversations(prev => prev.filter(conv => conv.other_user.id !== userId));
+        
+        console.log('Conversation başarıyla gizlendi:', username);
+      } catch (error) {
+        console.error('Conversation gizlenirken hata:', error);
+        alert('Conversation gizlenirken hata oluştu');
+      }
+    }
+  };
 
   // Conversation gösterme fonksiyonu - Backend API kullanır
   const unhideConversation = async (userId: string) => {
@@ -201,20 +217,20 @@ const DMPanel: React.FC<DMPanelProps> = ({
       );
     }
 
-    if (filteredConversations.length === 0) {
-      return (
-        <div style={{
-          padding: '32px 16px',
-          textAlign: 'center',
-          color: '#b9bbbe'
-        }}>
-          {searchQuery ? 'Konuşma bulunamadı' : 'Henüz konuşma yok'}
-          <div style={{ fontSize: '12px', marginTop: '8px', color: '#72767d' }}>
-            Arkadaşlar sekmesinden birini seç ve konuşmaya başla!
+      if (filteredConversations.length === 0) {
+        return (
+          <div style={{
+            padding: '32px 16px',
+            textAlign: 'center',
+            color: '#b9bbbe'
+          }}>
+            {searchQuery ? 'Konuşma bulunamadı' : 'Henüz konuşma yok'}
+            <div style={{ fontSize: '12px', marginTop: '8px', color: '#72767d' }}>
+              Arkadaşlar sekmesinden birini seç ve konuşmaya başla!
+            </div>
           </div>
-        </div>
-      );
-    }
+        );
+      }
 
     return (
       <>
@@ -353,7 +369,43 @@ const DMPanel: React.FC<DMPanelProps> = ({
                 {formatTime(conversation.lastMessage.created_at)}
               </div>
 
-
+              {/* Close X Button - show on hover */}
+              <div 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleHideConversation(conversation.other_user.id, conversation.other_user?.username || 'Bilinmeyen Kullanıcı');
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  right: '8px',
+                  transform: 'translateY(-50%)',
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '50%',
+                  backgroundColor: '#4f545c',
+                  color: '#dcddde',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '12px',
+                  cursor: 'pointer',
+                  opacity: 0,
+                  transition: 'opacity 0.15s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#ed4245';
+                  e.currentTarget.style.color = 'white';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#4f545c';
+                  e.currentTarget.style.color = '#dcddde';
+                }}
+                className="dm-close-button"
+                title="Sohbeti gizle"
+              >
+                ×
+              </div>
             </div>
           );
         })}

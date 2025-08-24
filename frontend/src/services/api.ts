@@ -1,3 +1,4 @@
+// frontend/src/services/api.ts - GÜNCELLEME
 const API_BASE = 'http://localhost:3001';
 
 const getAuthHeader = (): HeadersInit => {
@@ -175,6 +176,28 @@ export const friendsApi = {
 };
 
 export const dmApi = {
+  // YENİ: Okunmamış mesaj sayılarını getir
+  getUnreadCounts: async () => {
+    const response = await fetch(`${API_BASE}/dm/unread-counts`, {
+      headers: getAuthHeader(),
+    });
+    if (!response.ok) throw new Error('Failed to fetch unread counts');
+    return response.json();
+  },
+
+  // YENİ: Konuşmayı okundu olarak işaretle
+  markAsRead: async (userId: string) => {
+    const response = await fetch(`${API_BASE}/dm/${userId}/mark-read`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...getAuthHeader(),
+      },
+    });
+    if (!response.ok) throw new Error('Failed to mark as read');
+    return response.json();
+  },
+
   // Tüm DM konuşmalarını getir
   getConversations: async () => {
     console.log('dmApi.getConversations called');
@@ -201,7 +224,7 @@ export const dmApi = {
     }
   },
 
-  // Conversation gizleme - YENİ
+  // Conversation gizleme
   hideConversation: async (userId: string) => {
     console.log('dmApi.hideConversation called for user:', userId);
     try {
@@ -227,7 +250,7 @@ export const dmApi = {
     }
   },
 
-  // Conversation gösterme - YENİ
+  // Conversation gösterme
   unhideConversation: async (userId: string) => {
     console.log('dmApi.unhideConversation called for user:', userId);
     try {

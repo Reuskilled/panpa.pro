@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, Server, Channel } from '../types';
-import { serverApi } from '../services/api';
+import { serverApi, dmApi } from '../services/api';
 import ServerList from '../components/ServerList';
 import ChannelList from '../components/ChannelList';
 import ChatArea from '../components/ChatArea';
@@ -111,11 +111,19 @@ const MainApp: React.FC<MainAppProps> = ({ user, onLogout }) => {
     setDmTarget(null);
   };
 
-  // SADELEŞTIRILDI: Otomatik mesaj gönderme kaldırıldı
-  const handleStartDM = (targetUser: User, fromServerList: boolean = false) => {
+  // GÜNCELLENDI: Arkadaşa tıklayınca conversation entry oluşturulur
+  const handleStartDM = async (targetUser: User, fromServerList: boolean = false) => {
     console.log('MainApp handleStartDM called with:', targetUser.username);
     
-    // Sadece DM moduna geç
+    try {
+      // Conversation entry oluştur (mesaj olmadan da conversation listesinde görünsün)
+      await dmApi.createConversation(targetUser.id);
+      console.log('Conversation entry created for user:', targetUser.id);
+    } catch (error) {
+      console.warn('Failed to create conversation entry:', error);
+    }
+    
+    // DM moduna geç
     setViewMode('dm_chat');
     setDmTarget(targetUser);
     setSelectedServer(null);

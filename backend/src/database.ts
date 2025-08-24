@@ -351,16 +351,27 @@ export const database = {
     }
   },
 
-  // Direct Messages
+  // Direct Messages - GÜNCELLENDI
   directMessages: {
-    getConversation: (userId1: string, userId2: string, limit: number = 50): (DirectMessage & { sender: User; reply_to?: any })[] => {
-      const messages = db.direct_messages
-        .filter(dm => 
-          (dm.sender_id === userId1 && dm.receiver_id === userId2) ||
-          (dm.sender_id === userId2 && dm.receiver_id === userId1)
-        )
-        .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
-        .slice(-limit);
+    getConversation: (userId1: string, userId2: string | 'all', limit: number = 50): (DirectMessage & { sender: User; reply_to?: any })[] => {
+      let messages;
+      
+      if (userId2 === 'all') {
+        // Tüm DM mesajlarını getir (conversations için)
+        messages = db.direct_messages
+          .filter(dm => dm.sender_id === userId1 || dm.receiver_id === userId1)
+          .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+          .slice(-limit);
+      } else {
+        // Spesifik iki kullanıcı arasındaki mesajları getir
+        messages = db.direct_messages
+          .filter(dm => 
+            (dm.sender_id === userId1 && dm.receiver_id === userId2) ||
+            (dm.sender_id === userId2 && dm.receiver_id === userId1)
+          )
+          .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+          .slice(-limit);
+      }
 
       return messages.map(dm => {
         const sender = db.users.find(u => u.id === dm.sender_id);

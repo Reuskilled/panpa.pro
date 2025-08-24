@@ -8,8 +8,116 @@ const router = Router();
 // Tüm routes auth gerektirir
 router.use(authMiddleware);
 
+// YENİ: Kullanıcının tüm DM konuşmalarını getir
+router.get('/conversations', (req: AuthRequest, res: Response) => {
+  try {
+    const currentUserId = req.user!.id;
+    
+    console.log('Getting conversations for user:', currentUserId);
 
+    // Kullanıcının gizlediği conversation'ları al
+    const hiddenUserIds = database.hiddenConversations ? 
+      database.hiddenConversations.getHiddenByUser(currentUserId) : [];
+    
+    console.log('Hidden conversations:', hiddenUserIds);
 
+    // Tüm DM mesajlarını al ve conversation'lara grupla
+    const allMessages = database.directMessages.getConversation(currentUserId, 'all', 1000);
+    
+    // Conversation'ları user ID'ye göre grupla
+    const conversationMap = new Map();
+    
+    allMessages.forEach(message => {
+      const otherUserId = message.sender_id === currentUserId ? message.receiver_id : message.sender_id;
+      
+      // Gizlenmiş conversation'ları atla
+      if (hiddenUserIds.includes(otherUserId)) {
+        return;
+      }
+      
+      if (!conversationMap.has(otherUserId) || 
+          new Date(message.created_at).getTime() > new Date(conversationMap.get(otherUserId).created_at).getTime()) {
+        conversationMap.set(otherUserId, message);
+      }
+    });
+
+    // Conversation'ları array'e çevir ve kullanıcı bilgileriyle zenginleştir
+    const conversations = Array.from(conversationMap.entries()).map(([otherUserId, lastMessage]) => {
+      const otherUser = database.users.findById(otherUserId);
+      
+      if (!otherUser) {
+        return null;
+      }
+
+      return {
+        other_user: {
+          id: otherUser.id,
+          username: otherUser.username,
+          avatar_url: otherUser.avatar_url
+        },
+        lastMessage: {
+          id: lastMessage.id,
+          content: lastMessage.content,
+          created_at: lastMessage.created_at,
+          sender_id: lastMessage.sender_id
+        },
+        hasUnread: false // Bu basit versiyonda false, ileride geliştirilebilir
+      };
+    }).filter(conv => conv !== null);
+
+    // Son mesaj zamanına göre sırala (en yeni önce)
+    conversations.sort((a, b) => 
+      new Date(b.lastMessage.created_at).getTime() - new Date(a.lastMessage.created_at).getTime()
+    );
+
+    console.log('Returning conversations:', conversations.length);
+    
+    res.json({ 
+      conversations: conversations
+    });
+  } catch (error) {
+    console.error('Get conversations error:', error);
+    res.status(500).json({ error: 'Failed to get conversations' });
+  }
+});
+
+// YENİ: Conversation gizleme endpoint'i
+router.post('/conversations/:userId/hide', (req: AuthRequest, res: Response) => {
+  try {
+    const { userId } = req.params;
+    const currentUserId = req.user!.id;
+
+    console.log('Hiding conversation:', { currentUserId, userId });
+
+    if (database.hiddenConversations) {
+      database.hiddenConversations.hide(currentUserId, userId);
+    }
+
+    res.json({ message: 'Conversation hidden successfully' });
+  } catch (error) {
+    console.error('Hide conversation error:', error);
+    res.status(500).json({ error: 'Failed to hide conversation' });
+  }
+});
+
+// YENİ: Conversation gösterme endpoint'i
+router.post('/conversations/:userId/unhide', (req: AuthRequest, res: Response) => {
+  try {
+    const { userId } = req.params;
+    const currentUserId = req.user!.id;
+
+    console.log('Unhiding conversation:', { currentUserId, userId });
+
+    if (database.hiddenConversations) {
+      database.hiddenConversations.unhide(currentUserId, userId);
+    }
+
+    res.json({ message: 'Conversation unhidden successfully' });
+  } catch (error) {
+    console.error('Unhide conversation error:', error);
+    res.status(500).json({ error: 'Failed to unhide conversation' });
+  }
+});
 
 // DM konuşmasını getir
 router.get('/:userId', (req: AuthRequest, res: Response) => {
@@ -105,7 +213,9 @@ router.post('/:userId', (req: AuthRequest, res: Response) => {
     const message = database.directMessages.create(senderId, userId, content.trim(), reply_to_id);
     
     // Mesaj gönderildiğinde karşı taraf için conversation'ı otomatik unhide et
-    database.hiddenConversations.unhide(userId, senderId);
+    if (database.hiddenConversations) {
+      database.hiddenConversations.unhide(userId, senderId);
+    }
     
     // Yanıt bilgisini hazırla
     let reply_to = undefined;
