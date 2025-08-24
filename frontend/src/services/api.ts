@@ -1,4 +1,3 @@
-// frontend/src/services/api.ts - GÜNCELLEME
 const API_BASE = 'http://localhost:3001';
 
 const getAuthHeader = (): HeadersInit => {
@@ -176,29 +175,7 @@ export const friendsApi = {
 };
 
 export const dmApi = {
-  // YENİ: Okunmamış mesaj sayılarını getir
-  getUnreadCounts: async () => {
-    const response = await fetch(`${API_BASE}/dm/unread-counts`, {
-      headers: getAuthHeader(),
-    });
-    if (!response.ok) throw new Error('Failed to fetch unread counts');
-    return response.json();
-  },
-
-  // YENİ: Konuşmayı okundu olarak işaretle
-  markAsRead: async (userId: string) => {
-    const response = await fetch(`${API_BASE}/dm/${userId}/mark-read`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        ...getAuthHeader(),
-      },
-    });
-    if (!response.ok) throw new Error('Failed to mark as read');
-    return response.json();
-  },
-
-  // Tüm DM konuşmalarını getir
+  // Tüm DM konuşmalarını getir - YENİ
   getConversations: async () => {
     console.log('dmApi.getConversations called');
     try {
@@ -224,7 +201,7 @@ export const dmApi = {
     }
   },
 
-  // Conversation gizleme
+  // Conversation gizleme - YENİ
   hideConversation: async (userId: string) => {
     console.log('dmApi.hideConversation called for user:', userId);
     try {
@@ -250,7 +227,7 @@ export const dmApi = {
     }
   },
 
-  // Conversation gösterme
+  // Conversation gösterme - YENİ
   unhideConversation: async (userId: string) => {
     console.log('dmApi.unhideConversation called for user:', userId);
     try {
@@ -273,6 +250,32 @@ export const dmApi = {
     } catch (error) {
       console.error('unhideConversation error:', error);
       throw new Error('Failed to unhide conversation');
+    }
+  },
+
+  // Conversation entry oluşturma - YENİ
+  createConversation: async (userId: string) => {
+    console.log('dmApi.createConversation called for user:', userId);
+    try {
+      const response = await fetch(`${API_BASE}/dm/conversations/${userId}/create`, {
+        method: 'POST',
+        headers: getAuthHeader(),
+      });
+      
+      console.log('Create conversation response status:', response.status);
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Create conversation error response:', errorText);
+        throw new Error(`Failed to create conversation: ${response.status} ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      console.log('Create conversation success:', data);
+      return data;
+    } catch (error) {
+      console.error('createConversation error:', error);
+      throw new Error('Failed to create conversation');
     }
   },
 
